@@ -8,7 +8,8 @@ import BirthIcon from "@assets/BirthIcon";
 import { UserContext } from "@main_pages/Dashboard";
 const AdditionalInfo = () => {
   const [modifyState, setModifyState] = useState(false);
-  const userInfo = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  const [userInfo, setUserInfo] = user;
   const [loading, setLoading] = useState(false);
 
   const [formData, setFormData] = useState({});

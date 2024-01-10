@@ -8,7 +8,8 @@ import DefaultProfileImg from "@assets/DefaultProfileImg";
 import { UserContext, VisitContext } from "@main_pages/Dashboard";
 
 const FriendListBox = ({ friend }) => {
-  const userInfo = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  const [userInfo, setUserInfo] = user;
   const setVisitUser = useContext(VisitContext);
 
   async function removeFriend() {

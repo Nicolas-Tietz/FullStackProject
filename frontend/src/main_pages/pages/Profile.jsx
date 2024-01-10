@@ -7,7 +7,8 @@ import DefaultProfileImg from "@assets/DefaultProfileImg";
 import { Helmet } from "react-helmet";
 const Profile = (props) => {
   const inputFile = useRef(null);
-  const userInfo = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  const [userInfo, setUserInfo] = user;
   const [profilePicture, setProfilePicture] = useState(null);
   const [percentage, setPercentage] = useState();
   async function logout() {
@@ -23,10 +24,8 @@ const Profile = (props) => {
   }
 
   useEffect(() => {
-    if (userInfo != undefined) {
-      if (userInfo.image != "") {
-        setProfilePicture(userInfo.image);
-      }
+    if (userInfo.image != "" && userInfo.image != null) {
+      setProfilePicture(userInfo.image);
     }
   }, [userInfo]);
   useEffect(() => {
@@ -47,7 +46,10 @@ const Profile = (props) => {
   }
 
   useEffect(() => {
-    uploadImage();
+    if (profilePicture != null && profilePicture != "") {
+      uploadImage();
+      setUserInfo({ ...userInfo, image: profilePicture });
+    }
   }, [profilePicture]);
 
   async function uploadImage() {
@@ -72,7 +74,9 @@ const Profile = (props) => {
     reader.onload = () => {
       setProfilePicture(reader.result);
     };
-    reader.onerror = (error) => {};
+    reader.onerror = (error) => {
+      console.log("error:", error);
+    };
   }
   const onImageClick = () => {
     inputFile.current.click();
@@ -90,9 +94,9 @@ const Profile = (props) => {
                 className="group relative rounded-full hover:bg-gray-500 cursor-pointer h-20 w-20 md:h-40 md:w-40"
                 onClick={onImageClick}
               >
-                {profilePicture ? (
+                {userInfo.image ? (
                   <img
-                    src={profilePicture}
+                    src={userInfo.image}
                     alt="ProfilePicture"
                     className="h-full w-full group-hover:opacity-50 max-h-40 max-w-40 object-cover rounded-full"
                   />

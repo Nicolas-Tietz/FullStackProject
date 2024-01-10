@@ -5,7 +5,8 @@ import SingleNotificationBox from "@components/SingleNotificationBox";
 import { UserContext } from "@main_pages/Dashboard";
 import { Helmet } from "react-helmet";
 const Notifications = () => {
-  const userInfo = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  const [userInfo, setUserInfo] = user;
 
   return (
     <div className="bg-gray-700 w-full md:w-5/6 h-full">

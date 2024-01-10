@@ -11,15 +11,19 @@ const Authentication = (props) => {
   console.log("form", props.form);
   useEffect(() => {
     async function check() {
-      await axios
-        .get("http://localhost:5555/users/auth-check", {
-          withCredentials: true,
-        })
-        .then((res) => {
-          if (res.status == 201) {
-            navigate("/dashboard");
-          }
-        });
+      try {
+        await axios
+          .get("http://localhost:5555/users/auth-check", {
+            withCredentials: true,
+          })
+          .then((res) => {
+            if (res.status == 201) {
+              navigate("/dashboard");
+            }
+          });
+      } catch (err) {
+        console.log(err);
+      }
     }
     check();
   }, []);

@@ -4,16 +4,14 @@ import { useState, createContext, useContext } from "react";
 import { UserContext } from "@main_pages/Dashboard";
 import DefaultProfileImg from "@assets/DefaultProfileImg";
 const UserFoundBox = (props) => {
-  const userInfo = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  const [userInfo, setUserInfo] = user;
 
   const [sentState, setSentState] = useState("none");
   useEffect(() => {
-    console.log("pendingRequests", userInfo.pendingRequests);
     if (userInfo?.pendingRequests) {
       for (let request of userInfo.pendingRequests) {
         if (request == props.user.email) {
-          console.log("Sender", request);
-          console.log("propsuseremail", props.user.email);
           setSentState("pending");
         }
       }
@@ -26,7 +24,6 @@ const UserFoundBox = (props) => {
   }, [userInfo.pendingRequests, userInfo.friends]);
 
   async function addFriend() {
-    console.log("Button Clicked");
     try {
       const result = await axios
         .post("http://localhost:5555/users/add-friend", {

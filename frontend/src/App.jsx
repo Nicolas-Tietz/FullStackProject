@@ -18,16 +18,22 @@ const App = () => {
   }
   useEffect(() => {
     async function check() {
-      await axios
-        .get("http://localhost:5555/users/auth-check", {
-          withCredentials: true,
-        })
-        .then((res) => {
-          if (res.status == 200) {
-            setIsLogged(true);
-            setEmail(res.data.email);
-          }
-        });
+      try {
+        await axios
+          .get("http://localhost:5555/users/auth-check", {
+            withCredentials: true,
+          })
+          .then((res) => {
+            if (res.status == 200) {
+              setIsLogged(true);
+              setEmail(res.data.email);
+            }
+          });
+      } catch (err) {
+        if (err.response.status == 401) {
+          console.log("No valid Token Found");
+        }
+      }
     }
     check();
   }, []);

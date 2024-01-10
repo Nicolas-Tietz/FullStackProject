@@ -103,7 +103,7 @@ router.get("/search", async (req, res) => {
   const pipeline = [];
   pipeline.push({
     $search: {
-      index: "default",
+      index: "user_search",
       text: {
         query: searchQuery,
         path: ["firstName", "lastName", "username"],
@@ -165,14 +165,11 @@ router.get("/get-image:email", async (req, res) => {
 
 router.post("/upload-image", upload.single("file"), async (req, res) => {
   const { base64, email } = req.body;
-  debugger;
-  try {
-    const result = await User.updateOne(
-      { email: email },
-      { image: base64 }
-    ).exec();
 
-    return res.status(200).send(base64);
+  try {
+    const result = await User.updateOne({ email: email }, { image: base64 });
+
+    return res.status(200).send();
   } catch (error) {
     return res.send({ Status: "error", data: error });
   }
@@ -228,11 +225,14 @@ router.delete("/:id", async (req, res) => {
 });
 
 router.get("/auth-check", authenticateToken, (req, res) => {
-  if (req.user) {
-    return res.status(200).json(req.user);
+  try {
+    if (req.user) {
+      return res.status(200).json(req.user);
+    }
+    return res.status(401).send("User NOT authenticated");
+  } catch (err) {
+    console.log(err);
   }
-
-  return res.status(400).send("User NOT authenticated");
 });
 
 router.post("/add-friend", async (req, res) => {
@@ -391,15 +391,19 @@ router.post("/fetch-friends-info", async (req, res) => {
 });
 
 function authenticateToken(req, res, next) {
-  const authToken = req.cookies.token;
-  console.log(req.cookies);
-  if (authToken == null) return res.status(401).send();
-  jwt.verify(authToken, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
-    if (err) return res.status(403).send();
-    req.user = user;
+  try {
+    const authToken = req.cookies.token;
 
-    next();
-  });
+    if (authToken == null) return res.status(401).send();
+    jwt.verify(authToken, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
+      if (err) return res.status(403).send();
+      req.user = user;
+
+      next();
+    });
+  } catch (err) {
+    console.log(err);
+  }
 }
 
 function removeToken(req, res, next) {

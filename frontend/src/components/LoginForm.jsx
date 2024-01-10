@@ -96,7 +96,7 @@ const Login = (props) => {
             <div className="flex justify-end">
               <a
                 href="#"
-                class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                 onClick={() => {
                   navigate("/register");
                 }}

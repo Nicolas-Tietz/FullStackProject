@@ -9,7 +9,8 @@ import { Helmet } from "react-helmet";
 const Friends = ({ friends }) => {
   const [search, setSearch] = useState();
   const [searchResult, setSearchResult] = useState();
-  const userInfo = useContext(UserContext);
+  const { user } = useContext(UserContext);
+  const [userInfo, setUserInfo] = user;
   const [friendsInfo, setFriendsInfo] = useState([]);
   const [loadingState, setLoadingState] = useState(true);
 

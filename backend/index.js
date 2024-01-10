@@ -34,8 +34,9 @@ app.use("/users", usersRoute);
 
 mongoose
   .connect(process.env.MONGO_DB_URL)
-  .then(() => {
+  .then(async () => {
     console.log("App connected to database");
+
     const server = app.listen(PORT, () => {
       console.log(`App is listening to port: ${PORT}`);
       io = new Server(server, {
@@ -116,6 +117,7 @@ mongoose
           console.log("Friends changed");
           const socketId = connections[userDoc.email]?.id;
           //if user is not online, don't send alert notification
+          console.log(userDoc.email);
           if (socketId) io.to(socketId).emit("friendsUpdate", userDoc.friends);
         }
         if (pendingRequestsCheck) {

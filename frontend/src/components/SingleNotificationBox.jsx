@@ -7,8 +7,9 @@ const SingleNotificationBox = ({ notification }) => {
   // DA FIXARE, QUANDO DECLINO UNA FRIEND REQUEST VIENE MOSTRATA UNA NEWNOTIFICATION
 
   const [timeAgo, setTimeAgo] = useState("");
-  const userInfo = useContext(UserContext);
-  console.log(notification);
+  const { user } = useContext(UserContext);
+  const [userInfo, setUserInfo] = user;
+
   useEffect(() => {
     const now = Date.now();
     const diff = now - notification.date;
@@ -40,12 +41,13 @@ const SingleNotificationBox = ({ notification }) => {
       .then((res) => console.log("AddFriendRes", res));
   }
   async function declineRequest() {
-    const result = await axios
-      .post("http://localhost:5555/users/decline-request", {
+    const result = await axios.post(
+      "http://localhost:5555/users/decline-request",
+      {
         senderUser: notification.sender,
         receiverUser: userInfo.email,
-      })
-      .then((res) => console.log("RemoveFriendRes", res));
+      }
+    );
   }
 
   return (

@@ -47,8 +47,7 @@ const Dashboard = (props) => {
         .then(async (user) => {
           setUserInfo(user.data);
           setFetchState(true);
-          if (user.data.image == "") {
-          }
+
           const notificationsWithImages = await Promise.all(
             user.data.notifications.map(async (notification) => {
               const userImg = await getUserImage(notification.sender);
@@ -87,7 +86,6 @@ const Dashboard = (props) => {
             setAdditionalInfo(updatedInfo);
           });
           socketRef.current.on("pendingRequestsUpdate", (pendingRequests) => {
-            console.log("EntroPending");
             setPendingRequests(pendingRequests);
           });
         });
@@ -112,7 +110,6 @@ const Dashboard = (props) => {
     }
   }, [visitUser]);
 
-  useEffect(() => {}, [showedNewNotifications]);
   //Whenever friends gets updated, change it in the userinfo
   useEffect(() => {
     setUserInfo({ ...userInfo, friends: friends });
@@ -148,11 +145,12 @@ const Dashboard = (props) => {
         //C'è una notifica in meno
       }
     }
+
     setUserInfo({ ...userInfo, notifications: notifications });
   }, [notifications]);
 
   return (
-    <UserContext.Provider value={userInfo}>
+    <UserContext.Provider value={{ user: [userInfo, setUserInfo] }}>
       <Helmet>
         <title>Full Stack Project</title>
       </Helmet>
@@ -203,7 +201,7 @@ const Dashboard = (props) => {
             </div>
           </div>
         </div>
-        {page == "profile" && (
+        {page == "profile" && userInfo && (
           <Profile
             userInfo={userInfo}
             toggleLoginStatus={props.toggleLoginStatus}
