@@ -1,12 +1,23 @@
-Node and MongoDB are required for this Project to work.
+# Authentication Full Stack Project
 
-# The Project
+![NODEJS](https://img.shields.io/badge/NODE_JS-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![REACT](https://img.shields.io/badge/-ReactJs-61DAFB?logo=react&logoColor=white&style=for-the-badge)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
+![EXPRESS.JS](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)
+![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white)
 
-This is a Full Stack Project, in which people can create an account and log into it thanks to the authentication. I also added some extra features such as:
+**Node and MongoDB are required for this Project to work.**
+
+This is a Full Stack Project, that allows the creation of an account and the consecutive log in authentication. I also added some extra features such as:
+
+- Profile Page
+- Friends Page
+- Notifications Page
 
 ## Profile Page:
 
 contains the basic user info like first name, last name etc, and a box where the user can add some extra informations to his profile, for example their Job, Birth Date and so on.
+
 The user can also modify his profile picture by clicking on the default profile picture and uploading a new one.
 Also, the logout button, will redirect the user to the login page and they must login again, since the JWT token will be removed.
 
@@ -170,3 +181,9 @@ Now, you can try out the application by visiting this link
 ```
 localhost:5173
 ```
+
+## <img src="https://github.com/Nicolas-Tietz/JavascriptAdvancedProject/assets/120263952/1a97ff89-6048-4f5c-85ac-df77f18c8578" width='25px'> Contact
+
+<a href="https://nicolas-tietz.github.io/contact-me/">Portfolio Website</a>
+
+Email : nicolastietz48@gmail.com
