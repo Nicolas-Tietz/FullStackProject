@@ -7,6 +7,7 @@ import { Helmet } from "react-helmet";
 const Notifications = () => {
   const { user } = useContext(UserContext);
   const [userInfo, setUserInfo] = user;
+  console.log(userInfo.notifications);
 
   return (
     <div className="bg-gray-700 w-full md:w-5/6 h-full">
