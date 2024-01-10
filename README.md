@@ -10,6 +10,8 @@ contains the basic user info like first name, last name etc, and a box where the
 The user can also modify his profile picture by clicking on the default profile picture and uploading a new one.
 Also, the logout button, will redirect the user to the login page and they must login again, since the JWT token will be removed.
 
+![exampleprofile](https://github.com/Nicolas-Tietz/FullStackProject/assets/120263952/11ac4122-7778-48c8-83cf-3c59ce94dc25)
+
 ## Friends Page
 
 Inside this page, it's possible for users to add other people to their friend list. They just need to search the username in the search bar (could also be first name and/or last name) and click on the Add Friend button to send them a request.
@@ -18,10 +20,22 @@ On the top of the page, every user will have their friends showing up, if they h
 
 Also, clicking on the friend's name inside the box, will redirect to the friend's profile.
 
+![friends](https://github.com/Nicolas-Tietz/FullStackProject/assets/120263952/7be204e9-1014-416d-bb5a-994806d3dafb)
+
+![usersearch](https://github.com/Nicolas-Tietz/FullStackProject/assets/120263952/331f9beb-da71-41f6-9f5d-cbe84818ca55)
+
 ## Notification Page
 
 This is where user can see their notifications. At the moment, the only one available is the friend request, so here is where you can decide if accepting or declining them.
 Notifications will also pop-up for 5 seconds on the top right corner of the screen.
+
+![notification](https://github.com/Nicolas-Tietz/FullStackProject/assets/120263952/051eae33-7473-4bbf-bf0d-16a918a0156d)
+
+### Mobile View
+
+The application has also a mobile layout, where the various elements have been repositioned to fit better into a smaller device.
+
+![mobileview](https://github.com/Nicolas-Tietz/FullStackProject/assets/120263952/fc183eca-e344-46c4-ae1f-3d98b39c1b91)
 
 ### Password Encryption
 
