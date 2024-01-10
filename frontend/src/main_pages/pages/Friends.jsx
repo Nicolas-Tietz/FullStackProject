@@ -14,7 +14,6 @@ const Friends = ({ friends }) => {
   const [loadingState, setLoadingState] = useState(true);
 
   useEffect(() => {
-    console.log("AMISCI", userInfo.friends);
     if (userInfo.friends != []) {
       const fetchFriendsInfos = async () => {
         await axios
@@ -23,14 +22,11 @@ const Friends = ({ friends }) => {
             userInfo.friends
           )
           .then((res) => {
-            console.log("ArrayAmici", res);
             setFriendsInfo(res.data);
             setLoadingState(false);
           });
       };
       fetchFriendsInfos();
-    } else {
-      console.log("VUOTO");
     }
   }, [userInfo.friends]);
 
@@ -47,8 +43,6 @@ const Friends = ({ friends }) => {
       await axios
         .get(`http://localhost:5555/users/search?query=${search}`)
         .then((res) => {
-          console.log("RisultatiSearch", res.data);
-          console.log("UserInfoQUAA", userInfo);
           const filteredDataArray = res.data.filter((user) => {
             if (user.email == userInfo.email) {
               return null;
@@ -58,7 +52,7 @@ const Friends = ({ friends }) => {
             );
             return !foundInFriends;
           });
-          console.log("GUARDARE", res.data);
+
           setSearchResult(filteredDataArray);
         });
     }, 1000);

@@ -24,7 +24,6 @@ const Login = (props) => {
   async function handleSubmit(event) {
     event.preventDefault();
     try {
-      console.log(formData);
       await axios
         .post("http://localhost:5555/users/login", formData, {
           withCredentials: true,
@@ -35,7 +34,6 @@ const Login = (props) => {
           }
         });
     } catch (err) {
-      console.log(errorMessage);
       if (err.response.status == 404) {
         setErrorMessage("User doesnt exists");
       }
@@ -100,7 +98,6 @@ const Login = (props) => {
                 href="#"
                 class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                 onClick={() => {
-                  console.log("click");
                   navigate("/register");
                 }}
               >

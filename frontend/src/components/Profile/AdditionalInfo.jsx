@@ -18,7 +18,7 @@ const AdditionalInfo = () => {
 
   function handleChange(event) {
     const { name, value } = event.target;
-    console.log(name, value);
+
     setFormData((prevFormData) => ({
       ...prevFormData,
       [name]: value,
@@ -32,12 +32,10 @@ const AdditionalInfo = () => {
       const body = {};
       body["formData"] = formData;
       body["email"] = userInfo.email;
-      console.log("Body", body);
+
       await axios
         .post("http://localhost:5555/users/additional-info", body)
         .then((res) => {
-          console.log("Response:");
-          console.log(res);
           setLoading(false);
           if (res.status == 201) {
             navigate("/dashboard");

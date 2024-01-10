@@ -16,8 +16,6 @@ const Profile = (props) => {
         withCredentials: true,
       })
       .then((res) => {
-        console.log("Arrivata Res logout");
-        console.log(res);
         if (res.status == 200) {
           props.toggleLoginStatus();
         }
@@ -33,20 +31,17 @@ const Profile = (props) => {
   }, [userInfo]);
   useEffect(() => {
     if (userInfo?.additionalInfo) {
-      console.log("AAAAAAA", userInfo.additionalInfo);
       const newPercentage = updatePercentage(userInfo.additionalInfo);
       setPercentage(newPercentage);
-      console.log(newPercentage);
     }
   }, [userInfo?.additionalInfo]);
 
   function updatePercentage(additionalInfo) {
     let counter = 0;
     for (let field in additionalInfo) {
-      console.log(field);
       if (additionalInfo[field] != "") counter++;
     }
-    console.log("Counter", counter);
+
     const result = (counter * 100) / 5;
     return result;
   }
@@ -67,23 +62,17 @@ const Profile = (props) => {
       .get(`http://localhost:5555/users/get-image${userInfo?.email}`)
 
       .then((data) => {
-        console.log("ricevutiprofile", data);
         setProfilePicture(data.data);
       });
   }
 
   function convertToBase64(e) {
-    console.log("target", e.target);
-    console.log("targetFILE", e.target.files[0]);
     var reader = new FileReader();
     reader.readAsDataURL(e.target.files[0]);
     reader.onload = () => {
-      console.log("RisultatoReader", reader.result);
       setProfilePicture(reader.result);
     };
-    reader.onerror = (error) => {
-      console.log("error:", error);
-    };
+    reader.onerror = (error) => {};
   }
   const onImageClick = () => {
     inputFile.current.click();

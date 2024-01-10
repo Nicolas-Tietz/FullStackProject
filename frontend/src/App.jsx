@@ -12,7 +12,6 @@ import NotFound from "@main_pages/pages/NotFound";
 const App = () => {
   const [isLogged, setIsLogged] = useState();
   const [email, setEmail] = useState();
-  console.log("Login status:", isLogged);
 
   function toggleLoginStatus() {
     setIsLogged(!isLogged);

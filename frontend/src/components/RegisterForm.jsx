@@ -34,10 +34,8 @@ const Register = (props) => {
     event.preventDefault();
     try {
       setLoading(true);
-      console.log(formData);
+
       await axios.post("http://localhost:5555/users", formData).then((res) => {
-        console.log("Response:");
-        console.log(res);
         setLoading(false);
         if (res.status == 201) {
           navigate("/dashboard");
@@ -45,8 +43,7 @@ const Register = (props) => {
       });
     } catch (err) {
       setLoading(false);
-      console.log("Erorr", errorMessage);
-      console.log("Errore Completo", err);
+
       if (err.response.status == 409) {
         setErrorMessage("User already exists");
       }
