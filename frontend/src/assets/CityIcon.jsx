@@ -8,9 +8,9 @@ const CityIcon = (props) => {
       id="Layer_1"
       className="fill-current text-blue-300 h-14 w-14 md:h-20 md:w-20"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 512 512"
-      xml:space="preserve"
+      xmlSpace="preserve"
     >
       <g>
         <g>

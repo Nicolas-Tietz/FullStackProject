@@ -7,12 +7,12 @@ const BirthIcon = (props) => {
       version="1.1"
       id="designs"
       xmlns="http://www.w3.org/2000/svg"
-      xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlnsXlink="http://www.w3.org/1999/xlink"
       viewBox="0 0 32 32"
-      xml:space="preserve"
+      xmlSpace="preserve"
     >
       <path
-        class="sketchy_een"
+        className="sketchy_een"
         d="M25.982,10.981c-0.192-0.802-1.044-1.085-1.729-1.349c-0.056-0.021-0.119-0.03-0.183-0.03
 	c-0.009,0-0.018,0.003-0.027,0.004c-0.013-0.03-0.025-0.061-0.038-0.091c-0.144-0.332-0.326-0.658-0.534-0.955
 	c-0.524-0.751-1.184-1.434-1.921-1.978c-0.699-0.518-1.52-0.805-2.317-1.135c-0.292-0.121-0.595-0.222-0.902-0.312

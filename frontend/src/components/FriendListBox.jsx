@@ -26,7 +26,7 @@ const FriendListBox = ({ friend }) => {
     }
   }
   return (
-    <div className="w-full px-6 my-2">
+    <div className="w-full px-6 my-2" key={friend.username}>
       <div
         id="toast-notification"
         className=" p-2 md:p-4 text-gray-900 bg-white rounded-3xl shadow dark:bg-gray-800 dark:text-gray-300 "
@@ -34,13 +34,13 @@ const FriendListBox = ({ friend }) => {
       >
         <div className="flex justify-between items-center ">
           <div
-            class="flex items-center hover:cursor-pointer"
+            className="flex items-center hover:cursor-pointer"
             onClick={() => setVisitUser(friend)}
           >
-            <div class="relative inline-block shrink-0">
+            <div className="relative inline-block shrink-0">
               {friend.image ? (
                 <img
-                  class="w-16 h-16 rounded-full"
+                  className="w-16 h-16 rounded-full"
                   src={friend.image}
                   alt="Jese Leos image"
                 />
@@ -49,16 +49,16 @@ const FriendListBox = ({ friend }) => {
                   <DefaultProfileImg />
                 </div>
               )}
-              <span class="absolute bottom-0 right-0 inline-flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full">
+              <span className="absolute bottom-0 right-0 inline-flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full">
                 <img className="w-3/5" src={FriendIcon} alt="" />
               </span>
             </div>
-            <div class="ms-3 text-sm font-normal">
-              <div class="text-sm font-semibold text-gray-900 dark:text-white">
+            <div className="ms-3 text-sm font-normal">
+              <div className="text-sm font-semibold text-gray-900 dark:text-white">
                 {friend.firstName} {friend.lastName}
               </div>
-              <div class="text-sm font-normal">{friend.username}</div>
-              <span class="text-xs font-medium text-blue-600 dark:text-blue-500"></span>
+              <div className="text-sm font-normal">{friend.username}</div>
+              <span className="text-xs font-medium text-blue-600 dark:text-blue-500"></span>
             </div>
           </div>
           <div

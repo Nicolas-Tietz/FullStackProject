@@ -58,7 +58,7 @@ const Register = (props) => {
         <div className="grid gap-6 mb-6 md:grid-cols-2">
           <div>
             <label
-              for="first_name"
+              htmlFor="first_name"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               First name
@@ -75,7 +75,7 @@ const Register = (props) => {
           </div>
           <div>
             <label
-              for="last_name"
+              htmlFor="last_name"
               className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
             >
               Last name
@@ -93,7 +93,7 @@ const Register = (props) => {
         </div>
         <div className="mb-6">
           <label
-            for="email"
+            htmlFor="email"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Email address
@@ -110,7 +110,7 @@ const Register = (props) => {
         </div>
         <div className="mb-6">
           <label
-            for="username"
+            htmlFor="username"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Username
@@ -126,7 +126,7 @@ const Register = (props) => {
         </div>
         <div className="mb-6">
           <label
-            for="password"
+            htmlFor="password"
             className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
           >
             Password

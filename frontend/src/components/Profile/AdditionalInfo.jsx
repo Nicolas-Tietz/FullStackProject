@@ -111,10 +111,10 @@ const AdditionalInfo = () => {
                 <div className="text-center">
                   <div className="text-base pb-3">Phone Number</div>
 
-                  <div class="relative">
-                    <div class="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">
+                  <div className="relative">
+                    <div className="absolute inset-y-0 start-0 top-0 flex items-center ps-3.5 pointer-events-none">
                       <svg
-                        class="w-4 h-4 text-gray-500 dark:text-gray-400"
+                        className="w-4 h-4 text-gray-500 dark:text-gray-400"
                         aria-hidden="true"
                         xmlns="http://www.w3.org/2000/svg"
                         fill="white"
@@ -127,7 +127,7 @@ const AdditionalInfo = () => {
                       type="text"
                       id="phone-input"
                       aria-describedby="helper-text-explanation"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-800 focus:border-gray-800 block w-full ps-10 p-2.5  dark:bg-gray-800 dark:border-white dark:placeholder-gray-200 dark:text-white dark:focus:ring-gray-800 dark:focus:border-gray-800"
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-gray-800 focus:border-gray-800 block w-full ps-10 p-2.5  dark:bg-gray-800 dark:border-white dark:placeholder-gray-200 dark:text-white dark:focus:ring-gray-800 dark:focus:border-gray-800"
                       pattern="[0-9]{3}[0-9]{3}[0-9]{4}"
                       placeholder={userInfo.additionalInfo.phone}
                       onChange={handleChange}
@@ -142,20 +142,20 @@ const AdditionalInfo = () => {
                 </div>
                 <div className="text-center">
                   <div className="text-base pb-3">Gender</div>
-                  <div class="inline-block relative w-48 h-10">
+                  <div className="inline-block relative w-48 h-10">
                     <select
                       placeholder={userInfo.additionalInfo.gender}
                       onChange={handleChange}
                       name="gender"
-                      class="block appearance-none w-full bg-gray-800 border  hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                      className="block appearance-none w-full bg-gray-800 border  hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
                     >
                       <option>Select</option>
                       <option>Male</option>
                       <option>Female</option>
                     </select>
-                    <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
                       <svg
-                        class="fill-current h-4 w-4"
+                        className="fill-current h-4 w-4"
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 20 20"
                       >
@@ -168,7 +168,7 @@ const AdditionalInfo = () => {
             </div>
             <div className="text-center w-full my-10">
               <button
-                class="bg-transparent hover:bg-slate-200 text-white font-semibold hover:text-gray-800 py-2 px-4 border border-white hover:border-transparent rounded-full"
+                className="bg-transparent hover:bg-slate-200 text-white font-semibold hover:text-gray-800 py-2 px-4 border border-white hover:border-transparent rounded-full"
                 type="submit"
               >
                 Confirm Update
@@ -250,7 +250,7 @@ const AdditionalInfo = () => {
           <div className="text-center w-full my-10">
             <button
               onClick={swapForm}
-              class="bg-transparent hover:bg-slate-200 text-white font-semibold hover:text-blue-500 py-2 px-4 border border-white hover:border-transparent rounded-full"
+              className="bg-transparent hover:bg-slate-200 text-white font-semibold hover:text-blue-500 py-2 px-4 border border-white hover:border-transparent rounded-full"
             >
               Modify Profile
             </button>

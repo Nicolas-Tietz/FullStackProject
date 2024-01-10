@@ -136,7 +136,7 @@ const Profile = (props) => {
               <div className="mb-3 flex justify-center text-xl font-bold text-white md:w-fit md:-translate-x-1/2 md:-translate-y-1/2 w-full">
                 Complete your Profile
               </div>
-              <div class=" w-1/2 bg-gray-200 rounded-full dark:bg-gray-700 md:-translate-x-1/2 md:-translate-y-1/2">
+              <div className=" w-1/2 bg-gray-200 rounded-full dark:bg-gray-700 md:-translate-x-1/2 md:-translate-y-1/2">
                 <div
                   className="bg-blue-400 text-xs  text-white font-bold text-center py-0.5 leading-none rounded-full"
                   style={{ width: `${percentage}%` }}
@@ -150,7 +150,7 @@ const Profile = (props) => {
 
         <div className="flex items-center justify-center ">
           <button
-            class="bg-transparent hover:bg-slate-200 text-white text-sm md:text-lg font-semibold hover:text-blue-500 py-2 px-3 md:py-2 md:px-4 border border-white hover:border-transparent rounded-full"
+            className="bg-transparent hover:bg-slate-200 text-white text-sm md:text-lg font-semibold hover:text-blue-500 py-2 px-3 md:py-2 md:px-4 border border-white hover:border-transparent rounded-full"
             onClick={logout}
           >
             Logout
@@ -162,7 +162,7 @@ const Profile = (props) => {
           <div className="mb-3 flex justify-center text-xl font-bold text-white md:w-fit w-full">
             Complete your Profile
           </div>
-          <div class=" w-2/3 bg-gray-200 rounded-full dark:bg-gray-700 m-auto">
+          <div className=" w-2/3 bg-gray-200 rounded-full dark:bg-gray-700 m-auto">
             <div
               className="bg-blue-400 text-xs  text-white font-bold text-center py-0.5 leading-none rounded-full m-auto"
               style={{ width: `${percentage}%` }}

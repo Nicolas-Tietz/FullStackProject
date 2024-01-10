@@ -74,7 +74,7 @@ const Friends = ({ friends }) => {
         <div role="status" className="flex justify-center items-center h-full ">
           <svg
             aria-hidden="true"
-            class="inline w-10 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300 "
+            className="inline w-10 text-gray-200 animate-spin dark:text-gray-600 fill-gray-600 dark:fill-gray-300 "
             viewBox="0 0 100 101"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -88,7 +88,7 @@ const Friends = ({ friends }) => {
               fill="currentFill"
             />
           </svg>
-          <span class="sr-only">Loading...</span>
+          <span className="sr-only">Loading...</span>
         </div>
       ) : (
         <div className="">
@@ -104,21 +104,21 @@ const Friends = ({ friends }) => {
           <div className="grid grid-cols-1 md:grid-cols-2 max-h-48 md:max-h-72 overflow-auto scrollbar-thumb-gray-900 scrollbar-thin ">
             {friendsInfo &&
               friendsInfo.map((friend) => {
-                return <FriendListBox friend={friend} />;
+                return <FriendListBox key={friend} friend={friend} />;
               })}
           </div>
-          <hr class=" h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100 mt-5" />
-          <div class="my-6">
+          <hr className=" h-px border-t-0 bg-transparent bg-gradient-to-r from-transparent via-neutral-500 to-transparent opacity-25 dark:opacity-100 mt-5" />
+          <div className="my-6">
             <label
-              for="large-input"
-              class="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-center"
+              htmlFor="large-input"
+              className="block mb-2 text-sm font-medium text-gray-900 dark:text-white text-center"
             >
               Search For A User
             </label>
             <input
               type="text"
               id="large-input"
-              class="m-auto block w-2/3 p-2 md:p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="m-auto block w-2/3 p-2 md:p-4 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-md focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
               onChange={handleChange}
               name="searchInput"
             />
