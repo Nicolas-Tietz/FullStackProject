@@ -80,7 +80,10 @@ router.post("/login", async (req, res) => {
     const obj = { email: req.body.email };
     const accessToken = jwt.sign(obj, process.env.ACCESS_TOKEN_SECRET);
 
-    res.cookie("token", accessToken, { httpOnly: true });
+    res.cookie("token", accessToken, {
+      expires: new Date(Date.now() + 900000),
+      httpOnly: true,
+    });
     const user = await User.findOne({ email: req.body.email });
 
     return res.status(200).send();
@@ -389,7 +392,7 @@ router.post("/fetch-friends-info", async (req, res) => {
 
 function authenticateToken(req, res, next) {
   const authToken = req.cookies.token;
-
+  console.log(req.cookies);
   if (authToken == null) return res.status(401).send();
   jwt.verify(authToken, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
     if (err) return res.status(403).send();
