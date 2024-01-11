@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import axios from "axios";
-import FriendsIcon from "@assets/FriendsIcon";
+
+import FriendsIconSm from "@assets/FriendsIconSm";
 import CrossIcon from "@assets/CrossIcon";
 import DefaultProfileImg from "@assets/DefaultProfileImg";
 
@@ -50,7 +51,7 @@ const FriendListBox = ({ friend }) => {
               )}
               <span className="absolute bottom-0 right-0 inline-flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full">
                 <div className="h-4/5 w-4/5">
-                  <FriendsIcon />
+                  <FriendsIconSm />
                 </div>
               </span>
             </div>
