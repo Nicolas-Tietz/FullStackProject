@@ -57,7 +57,7 @@ const Profile = (props) => {
 
     await axios
       .post(
-        "https://frontend-fullstack.vercel.app:5555/users/upload-image",
+        "https://fullstack-project-jbqv.onrender.com:5555/users/upload-image",
         body
       )
       .then((data) => {});
@@ -65,7 +65,7 @@ const Profile = (props) => {
   async function getImage() {
     await axios
       .get(
-        `https://frontend-fullstack.vercel.app:5555/users/get-image${userInfo?.email}`
+        `https://fullstack-project-jbqv.onrender.com:5555/users/get-image${userInfo?.email}`
       )
 
       .then((data) => {

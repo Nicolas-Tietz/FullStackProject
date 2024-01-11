@@ -35,7 +35,7 @@ const SingleNotificationBox = ({ notification }) => {
   async function acceptRequest() {
     const result = await axios
       .post(
-        "https://fullstack-project-jbqv.onrender.com/users/accept-request",
+        "https://fullstack-project-jbqv.onrender.com:5555/users/accept-request",
         {
           senderUser: notification.sender,
           receiverUser: userInfo.email,
@@ -45,7 +45,7 @@ const SingleNotificationBox = ({ notification }) => {
   }
   async function declineRequest() {
     const result = await axios.post(
-      "https://fullstack-project-jbqv.onrender.com/users/decline-request",
+      "https://fullstack-project-jbqv.onrender.com:5555/users/decline-request",
       {
         senderUser: notification.sender,
         receiverUser: userInfo.email,
