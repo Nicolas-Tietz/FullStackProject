@@ -36,7 +36,7 @@ const AdditionalInfo = () => {
 
       await axios
         .post(
-          "https://fullstack-project-jbqv.onrender.com/users/additional-info",
+          "https://fullstack-project-jbqv.onrender.com:5555/users/additional-info",
           body
         )
         .then((res) => {

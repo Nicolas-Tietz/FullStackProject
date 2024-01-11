@@ -9,9 +9,12 @@ const Authentication = (props) => {
   useEffect(() => {
     async function check() {
       await axios
-        .get("https://fullstack-project-jbqv.onrender.com/users/auth-check", {
-          withCredentials: true,
-        })
+        .get(
+          "https://fullstack-project-jbqv.onrender.com:5555/users/auth-check",
+          {
+            withCredentials: true,
+          }
+        )
         .then((res) => {
           if (res.status == 200) {
             navigate("/dashboard");

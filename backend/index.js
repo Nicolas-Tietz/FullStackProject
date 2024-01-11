@@ -19,7 +19,7 @@ app.use(express.json({ limit: "50mb" }));
 app.use(express.urlencoded({ limit: "50mb", extended: true }));
 app.use(
   cors({
-    origin: "fancy-dodol-f36aea.netlify.app",
+    origin: "https://frontend-fullstack.vercel.app",
     methods: ["GET", "POST", "PATCH", "DELETE"],
     allowedHeaders: ["Content-Type", "Origin", "X-Requested-With", "Accept"],
     credentials: true,
@@ -41,7 +41,7 @@ mongoose
       console.log(`App is listening to port: ${PORT}`);
       io = new Server(server, {
         cors: {
-          origin: "fancy-dodol-f36aea.netlify.app",
+          origin: "https://frontend-fullstack.vercel.app",
           methods: ["GET", "POST"],
           credentials: true,
         },
