@@ -36,10 +36,7 @@ const Register = (props) => {
       setLoading(true);
 
       await axios
-        .post(
-          "https://fullstack-project-jbqv.onrender.com:5555/users",
-          formData
-        )
+        .post("https://fullstack-project-jbqv.onrender.com/users", formData)
         .then((res) => {
           if (res.status == 201) {
             navigate("/dashboard");
