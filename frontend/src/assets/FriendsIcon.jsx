@@ -5,7 +5,7 @@ const FriendsIcon = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      className="md:h-6 md:w-6 fill-current text-white"
+      className="h-8 w-8 md:h-6 md:w-6 fill-current text-white"
       viewBox="0 0 20 18"
     >
       <path
