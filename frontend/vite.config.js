@@ -4,7 +4,6 @@ import scrollbar from "tailwind-scrollbar";
 import path from "node:path";
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "./",
   plugins: [react(), scrollbar()],
   resolve: {
     alias: {
