@@ -48,8 +48,10 @@ const FriendListBox = ({ friend }) => {
                   <DefaultProfileImg />
                 </div>
               )}
-              <span className="absolute bottom-0 right-0 inline-flex items-center justify-center w-4/5 h-4/5 bg-blue-600 rounded-full">
-                <FriendsIcon />
+              <span className="absolute bottom-0 right-0 inline-flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full">
+                <div className="w-3/5 h-3/5">
+                  <FriendsIcon />
+                </div>
               </span>
             </div>
             <div className="ms-3 text-sm font-normal">
