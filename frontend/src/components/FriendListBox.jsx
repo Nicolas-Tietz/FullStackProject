@@ -1,7 +1,6 @@
 import React, { useContext } from "react";
 import axios from "axios";
 
-import FriendIcon from "@assets/friends.png";
 import CrossIcon from "@assets/CrossIcon";
 import DefaultProfileImg from "@assets/DefaultProfileImg";
 
