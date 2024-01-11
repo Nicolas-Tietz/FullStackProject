@@ -15,7 +15,7 @@ const FriendListBox = ({ friend }) => {
   async function removeFriend() {
     try {
       const result = await axios.post(
-        "http://localhost:5555/users/remove-friend",
+        "https://fullstack-project-jbqv.onrender.com:5555/users/remove-friend",
         {
           user: userInfo,
           friend: friend,

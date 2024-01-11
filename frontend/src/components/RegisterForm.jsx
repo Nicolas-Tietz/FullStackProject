@@ -35,11 +35,16 @@ const Register = (props) => {
     try {
       setLoading(true);
 
-      await axios.post("http://localhost:5555/users", formData).then((res) => {
-        if (res.status == 201) {
-          navigate("/dashboard");
-        }
-      });
+      await axios
+        .post(
+          "https://fullstack-project-jbqv.onrender.com:5555/users",
+          formData
+        )
+        .then((res) => {
+          if (res.status == 201) {
+            navigate("/dashboard");
+          }
+        });
     } catch (err) {
       console.log("Errore");
       console.log(err);

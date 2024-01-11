@@ -19,7 +19,7 @@ const Friends = ({ friends }) => {
       const fetchFriendsInfos = async () => {
         await axios
           .post(
-            "http://localhost:5555/users/fetch-friends-info",
+            "https://fullstack-project-jbqv.onrender.com:5555/users/fetch-friends-info",
             userInfo.friends
           )
           .then((res) => {
@@ -42,7 +42,9 @@ const Friends = ({ friends }) => {
     }
     const timer = setTimeout(async () => {
       await axios
-        .get(`http://localhost:5555/users/search?query=${search}`)
+        .get(
+          `https://fullstack-project-jbqv.onrender.com:5555/users/search?query=${search}`
+        )
         .then((res) => {
           const filteredDataArray = res.data.filter((user) => {
             if (user.email == userInfo.email) {

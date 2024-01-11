@@ -41,9 +41,12 @@ const Dashboard = (props) => {
   useEffect(() => {
     const fetchInfo = async () => {
       const data = await axios
-        .get(`http://localhost:5555/users/dashboard-info`, {
-          withCredentials: true,
-        })
+        .get(
+          `https://fullstack-project-jbqv.onrender.com:5555/users/dashboard-info`,
+          {
+            withCredentials: true,
+          }
+        )
         .then(async (user) => {
           setUserInfo(user.data);
           setFetchState(true);
@@ -57,11 +60,14 @@ const Dashboard = (props) => {
 
           setNotifications(notificationsWithImages);
 
-          socketRef.current = io("http://localhost:5555", {
-            query: {
-              email: user.data.email,
-            },
-          });
+          socketRef.current = io(
+            "https://fullstack-project-jbqv.onrender.com:5555",
+            {
+              query: {
+                email: user.data.email,
+              },
+            }
+          );
 
           socketRef.current.on("connect", () => {
             console.log("Connected To The Server");
@@ -120,7 +126,7 @@ const Dashboard = (props) => {
 
   async function getUserImage(email) {
     const response = await axios.get(
-      `http://localhost:5555/users/get-image${email}`
+      `https://fullstack-project-jbqv.onrender.com:5555/users/get-image${email}`
     );
 
     return response.data;

@@ -34,15 +34,18 @@ const SingleNotificationBox = ({ notification }) => {
 
   async function acceptRequest() {
     const result = await axios
-      .post("http://localhost:5555/users/accept-request", {
-        senderUser: notification.sender,
-        receiverUser: userInfo.email,
-      })
+      .post(
+        "https://fullstack-project-jbqv.onrender.com:5555/users/accept-request",
+        {
+          senderUser: notification.sender,
+          receiverUser: userInfo.email,
+        }
+      )
       .then((res) => console.log("AddFriendRes", res));
   }
   async function declineRequest() {
     const result = await axios.post(
-      "http://localhost:5555/users/decline-request",
+      "https://fullstack-project-jbqv.onrender.com:5555/users/decline-request",
       {
         senderUser: notification.sender,
         receiverUser: userInfo.email,

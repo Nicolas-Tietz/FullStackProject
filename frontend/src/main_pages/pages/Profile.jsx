@@ -13,7 +13,7 @@ const Profile = (props) => {
   const [percentage, setPercentage] = useState();
   async function logout() {
     const data = await axios
-      .get(`http://localhost:5555/users/logout`, {
+      .get(`https://fullstack-project-jbqv.onrender.com:5555/users/logout`, {
         withCredentials: true,
       })
       .then((res) => {
@@ -56,12 +56,17 @@ const Profile = (props) => {
     const body = { base64: profilePicture, email: userInfo.email };
 
     await axios
-      .post("http://localhost:5555/users/upload-image", body)
+      .post(
+        "http://fancy-dodol-f36aea.netlify.app:5555/users/upload-image",
+        body
+      )
       .then((data) => {});
   }
   async function getImage() {
     await axios
-      .get(`http://localhost:5555/users/get-image${userInfo?.email}`)
+      .get(
+        `http://fancy-dodol-f36aea.netlify.app:5555/users/get-image${userInfo?.email}`
+      )
 
       .then((data) => {
         setProfilePicture(data.data);

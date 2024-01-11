@@ -26,10 +26,13 @@ const UserFoundBox = (props) => {
   async function addFriend() {
     try {
       const result = await axios
-        .post("http://localhost:5555/users/add-friend", {
-          senderUser: userInfo,
-          receiverUser: props.user,
-        })
+        .post(
+          "https://fullstack-project-jbqv.onrender.com:5555/users/add-friend",
+          {
+            senderUser: userInfo,
+            receiverUser: props.user,
+          }
+        )
         .then((res) => {
           if (res.status == 200) {
             setSentState("pending");
