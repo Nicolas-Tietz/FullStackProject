@@ -82,6 +82,7 @@ router.post("/login", async (req, res) => {
     console.log("AccessToken", accessToken);
     res.cookie("token", accessToken, {
       expires: new Date(Date.now() + 900000),
+      path: "/",
       httpOnly: true,
     });
     const user = await User.findOne({ email: req.body.email });
