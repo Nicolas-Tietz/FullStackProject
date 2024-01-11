@@ -49,16 +49,6 @@ const App = () => {
           )
         }
       />
-      <Route
-        path="/dashboard"
-        element={
-          isLogged ? (
-            <Dashboard toggleLoginStatus={toggleLoginStatus} />
-          ) : (
-            <Navigate to="/login" />
-          )
-        }
-      />
 
       <Route
         path="/register"
