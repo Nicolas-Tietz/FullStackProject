@@ -84,6 +84,8 @@ router.post("/login", async (req, res) => {
       expires: new Date(Date.now() + 900000),
       path: "/",
       httpOnly: true,
+      sameSite: "None",
+      secure: true,
     });
     const user = await User.findOne({ email: req.body.email });
 
