@@ -42,7 +42,11 @@ const App = () => {
       <Route
         path="/"
         element={
-          isLogged ? <Navigate to="/dashboard" /> : <Navigate to="/login" />
+          isLogged ? (
+            <Dashboard toggleLoginStatus={toggleLoginStatus} />
+          ) : (
+            <Navigate to="/login" />
+          )
         }
       />
       <Route
@@ -58,13 +62,13 @@ const App = () => {
 
       <Route
         path="/register"
-        element={isLogged ? <Navigate to="/dashboard" /> : <Register />}
+        element={isLogged ? <Navigate to="/" /> : <Register />}
       />
       <Route
         path="/login"
         element={
           isLogged ? (
-            <Navigate to="/dashboard" />
+            <Navigate to="/" />
           ) : (
             <Login toggleLoginStatus={toggleLoginStatus} />
           )
