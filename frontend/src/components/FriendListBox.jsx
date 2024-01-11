@@ -50,7 +50,7 @@ const FriendListBox = ({ friend }) => {
                 </div>
               )}
               <span className="absolute bottom-0 right-0 inline-flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full">
-                <div className="h-4/5 w-4/5">
+                <div className="flex justify-center items-center">
                   <FriendsIconSm />
                 </div>
               </span>
