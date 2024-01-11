@@ -42,7 +42,7 @@ const Dashboard = (props) => {
     const fetchInfo = async () => {
       const data = await axios
         .get(
-          `https://fullstack-project-jbqv.onrender.com:5555/users/dashboard-info`,
+          `https://fullstack-project-jbqv.onrender.com/users/dashboard-info`,
           {
             withCredentials: true,
           }
@@ -61,7 +61,7 @@ const Dashboard = (props) => {
           setNotifications(notificationsWithImages);
 
           socketRef.current = io(
-            "https://fullstack-project-jbqv.onrender.com:5555",
+            "https://fullstack-project-jbqv.onrender.com",
             {
               query: {
                 email: user.data.email,
@@ -126,7 +126,7 @@ const Dashboard = (props) => {
 
   async function getUserImage(email) {
     const response = await axios.get(
-      `https://fullstack-project-jbqv.onrender.com:5555/users/get-image${email}`
+      `https://fullstack-project-jbqv.onrender.com/users/get-image${email}`
     );
 
     return response.data;
