@@ -65,7 +65,8 @@ router.post("/", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
-    console.log(req.body);
+    console.log("Login req.body", req.body);
+
     if (!req.body.email || !req.body.password)
       return res.status(400).send("Must contain Email and password");
 
@@ -393,7 +394,7 @@ function authenticateToken(req, res, next) {
   try {
     const authToken = req.cookies.token;
 
-    if (authToken == null) return res.status(401).send();
+    if (authToken == null) return res.status(401).send("Token Null");
     jwt.verify(authToken, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
       if (err) return res.status(403).send();
       req.user = user;
