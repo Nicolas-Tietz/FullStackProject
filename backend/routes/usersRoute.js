@@ -3,10 +3,7 @@ import { User } from "../models/userModel.js";
 import { Login } from "../models/loginModel.js";
 import bcrypt from "bcrypt";
 import upload from "../multerConfig.js";
-import fs from "fs";
-import path from "path";
-import sharp from "sharp";
-import { Buffer } from "buffer";
+
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
@@ -15,6 +12,7 @@ const router = express.Router();
 //Register Route
 router.post("/", async (req, res) => {
   try {
+    console.log(req.body);
     if (!req.body.email || !req.body.firstName || !req.body.lastName) {
       return res.status(400).send({
         message: "Required fields are: email,password,firstName and lastName",
@@ -67,6 +65,7 @@ router.post("/", async (req, res) => {
 
 router.post("/login", async (req, res) => {
   try {
+    console.log(req.body);
     if (!req.body.email || !req.body.password)
       return res.status(400).send("Must contain Email and password");
 
