@@ -79,7 +79,7 @@ router.post("/login", async (req, res) => {
     }
     const obj = { email: req.body.email };
     const accessToken = jwt.sign(obj, process.env.ACCESS_TOKEN_SECRET);
-
+    console.log("AccessToken", accessToken);
     res.cookie("token", accessToken, {
       expires: new Date(Date.now() + 900000),
       httpOnly: true,
@@ -393,7 +393,7 @@ router.post("/fetch-friends-info", async (req, res) => {
 function authenticateToken(req, res, next) {
   try {
     const authToken = req.cookies.token;
-
+    console.log("Cookies:", req.cookies);
     if (authToken == null) return res.status(401).send("Token Null");
     jwt.verify(authToken, process.env.ACCESS_TOKEN_SECRET, (err, user) => {
       if (err) return res.status(403).send();
