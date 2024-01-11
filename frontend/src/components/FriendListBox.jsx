@@ -49,7 +49,7 @@ const FriendListBox = ({ friend }) => {
                 </div>
               )}
               <span className="absolute bottom-0 right-0 inline-flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full">
-                <div className="h-2 w-2">
+                <div className="h-full w-full">
                   <FriendsIcon />
                 </div>
               </span>
