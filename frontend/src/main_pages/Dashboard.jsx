@@ -42,7 +42,7 @@ const Dashboard = (props) => {
     const fetchInfo = async () => {
       const data = await axios
         .get(
-          `https://fullstack-project-jbqv.onrender.com:5555/users/dashboard-info`,
+          `https://fullstack-project-jbqv.onrender.com/users/dashboard-info`,
           {
             withCredentials: true,
           }
