@@ -18,7 +18,7 @@ const Authentication = (props) => {
           })
           .then((res) => {
             if (res.status == 201) {
-              navigate("/dashboard");
+              navigate("/");
             }
           });
       } catch (err) {
@@ -29,7 +29,7 @@ const Authentication = (props) => {
   }, []);
   console.log(swapForm);
   if (props.isLogged) {
-    navigate("/dashboard");
+    navigate("/");
   }
 
   return (

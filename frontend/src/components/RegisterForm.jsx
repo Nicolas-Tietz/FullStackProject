@@ -39,7 +39,7 @@ const Register = (props) => {
         .post("https://fullstack-project-jbqv.onrender.com/users", formData)
         .then((res) => {
           if (res.status == 201) {
-            navigate("/dashboard");
+            navigate("/");
           }
         });
     } catch (err) {

@@ -42,7 +42,7 @@ const AdditionalInfo = () => {
         .then((res) => {
           setLoading(false);
           if (res.status == 201) {
-            navigate("/dashboard");
+            navigate("/");
           }
         });
     } catch (err) {

@@ -7,7 +7,7 @@ const Authentication = (props) => {
   const navigate = useNavigate();
 
   if (props.isLogged) {
-    navigate("/dashboard");
+    navigate("/");
   }
 
   return (

@@ -14,7 +14,7 @@ const Authentication = (props) => {
         })
         .then((res) => {
           if (res.status == 200) {
-            navigate("/dashboard");
+            navigate("/");
           }
         });
     }
@@ -22,7 +22,7 @@ const Authentication = (props) => {
   }, []);
   console.log(swapForm);
   if (props.isLogged) {
-    navigate("/dashboard");
+    navigate("/");
   }
 
   return (
