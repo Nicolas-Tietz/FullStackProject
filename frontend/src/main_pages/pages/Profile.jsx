@@ -13,7 +13,7 @@ const Profile = (props) => {
   const [percentage, setPercentage] = useState();
   async function logout() {
     const data = await axios
-      .get(`https://fullstack-project-jbqv.onrender.com:5555/users/logout`, {
+      .get(`https://fullstack-project-jbqv.onrender.com/users/logout`, {
         withCredentials: true,
       })
       .then((res) => {
